@@ -1,0 +1,58 @@
+.outer {
+    display: flex;
+    width: 75%;
+    justify-content: space-around;
+    margin-top: 20px
+}
+
+.avaWrap {
+    position: relative;
+    width: 180px;
+    height: 200px;
+    background-color: #ffffff;
+    border-radius: 6px;
+    box-shadow: 0 0 6px 0 gainsboro;
+
+}
+
+.ava {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    height: 100%;
+}
+
+.description {
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: 0 0 6px 0 gainsboro;
+    width: 70%;
+    height: 300px;
+}
+
+.name {
+    font-size: 26px;
+    margin-top: 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.contacts {
+    margin-left: 30px;
+}
+
+.items {
+    margin-left: 20px;
+}
+
+.looking {
+    margin-left: 30px;
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.status {
+    text-align: center;
+}

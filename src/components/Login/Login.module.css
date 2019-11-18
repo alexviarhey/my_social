@@ -1,0 +1,48 @@
+.outer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-left: 300px;
+    padding-top: 100px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    font-size: 30px;
+    margin-left: 115px;
+    margin-bottom: 20px;
+}
+
+.error {
+    color: red;
+}
+
+.input  {
+    width: 300px;
+    height: 30px;
+    font-size: 18px;
+    margin-bottom: 20px;
+    padding-left: 5px;
+}
+
+.input::placeholder {
+    color: #575c63;
+    font-size: 14px;
+
+}
+
+.submit {
+    background: none;
+    border: 1px solid #575c63;
+    padding: 10px 30px;
+    width: 310px;
+}
+
+.captcha {
+    width: 310px;
+    height: 60px;
+}

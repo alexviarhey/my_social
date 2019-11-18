@@ -1,0 +1,30 @@
+.outer {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    margin-left: 20px;
+    margin-top: 20px;
+    /*box-shadow: 0 0 3px rgba(0,0,0,0.5);*/
+    border-radius: 2px;
+    width: 200px;
+    height: 400px;
+   /* background-color: #f0f1f3;*/
+}
+
+.navContainer {
+    padding: 3px;
+}
+
+.navContainer:hover {
+    background-color: #d6dde8;
+
+}
+
+.nav {
+    color: #afc0d7;
+    text-decoration: none;
+}
+
+.active {
+    color: #0969A2;
+}
