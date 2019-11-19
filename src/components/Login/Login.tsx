@@ -12,7 +12,7 @@ const Login = () => {
     let errMessage = useSelector((state: AppStateType): string | null => state.authPage.errorLoginMessage);
     let isAuth = useSelector((state: AppStateType): boolean => state.authPage.isAuth);
     let captcha = useSelector((state: AppStateType): string | null => state.authPage.captchaUrl)
-    let dispatch = useDispatch()
+    let dispatch = useDispatch();
     const formik = useFormik({
         initialValues: {
             email: '',

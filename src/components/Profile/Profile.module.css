@@ -56,3 +56,22 @@
 .status {
     text-align: center;
 }
+
+
+.avaInput {
+    display: none;
+}
+
+.avaLabel {
+    border: 1px solid black;
+    padding: 3px 6px;
+}
+
+.avaLabel:hover {
+    cursor: pointer
+}
+
+.avaForm {
+    margin-top: 10px;
+    margin-left: 40px;
+}

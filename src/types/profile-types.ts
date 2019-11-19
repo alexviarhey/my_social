@@ -1,4 +1,4 @@
-import { SET_PROFILE_DATA, SET_STATUS } from "../redux/profile-reducer";
+import {SET_NEW_PHOTO, SET_PROFILE_DATA, SET_STATUS} from "../redux/profile-reducer";
 
 interface IContacts {
     github: string
@@ -11,7 +11,7 @@ interface IContacts {
     mainLink: string
 }
 
-interface IPhotos {
+export interface IPhotos {
     small: string
     large: string
 }
@@ -41,5 +41,10 @@ export interface ISetStatusAction {
     status: string
 }
 
-export type CommonActionsProfileType = ISetProfileDataAction | ISetStatusAction
+export interface ISetPhotoAction {
+    type: typeof SET_NEW_PHOTO
+    newPhoto: IPhotos
+}
+
+export type CommonActionsProfileType = ISetProfileDataAction | ISetStatusAction | ISetPhotoAction
 
