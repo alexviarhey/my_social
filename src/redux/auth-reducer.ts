@@ -16,7 +16,7 @@ const initialState: IState = {
     isAuth: false,
     errorLoginMessage: null,
     captchaUrl: null
-}
+};
 
 export const authReducer = (state=initialState, action:  AuthCommonAction) => {
     switch (action.type) {

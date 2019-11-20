@@ -12,7 +12,7 @@ interface IProps {
 
 
 const Avatar = ({photo}: IProps) => {
-    let dispatch = useDispatch()
+    let dispatch = useDispatch();
     const onInputChange = (e: ChangeEvent<HTMLInputElement>) => {
       if(e.target.files) {
           dispatch(changePhoto(e.target.files[0]))
@@ -23,9 +23,9 @@ const Avatar = ({photo}: IProps) => {
             <div className={s.avaWrap}>
                 <img className={s.ava} src={photo || ava}/>
             </div>
-            <div>
-                <label htmlFor='files'>Change Photo</label>
-                <input type="file" id='files' onChange={(e) => onInputChange(e)}/>
+            <div className={s.avaForm}>
+                <label className={s.changePhoto} htmlFor='files'>Change Photo</label>
+                <input className={s.photoInput} type="file" id='files' onChange={(e) => onInputChange(e)}/>
             </div>
         </div>
 

@@ -54,11 +54,10 @@ const setStatus = (status: string): ISetStatusAction => {
 
 const setNewPhoto = (newPhoto: IPhotos): ISetPhotoAction => {
     return {type: SET_NEW_PHOTO, newPhoto}
-}
+};
 
 
 export const getUserProfile = (userId: number) => async (dispatch: any) => {
-    debugger
     let res = await profileApi.getUserProfile(userId);
     dispatch(setProfileData(res.data))
 };
@@ -75,11 +74,16 @@ export const updateStatus = (status: string) => async (dispatch: any) => {
     }
 };
 
-export const changePhoto = (photoFile: any): Function => async (dispatch: any) => {
+export const changePhoto = (photoFile: any): Function => async (dispatch: any, getState: any) => {
+    let userId = getState().authPage.id
     let res = await profileApi.changePhoto(photoFile);
-    debugger
     if (res.data.resultCode === 0) {
-        debugger
-        dispatch(setNewPhoto(res.data.data.photos))
+        dispatch(getUserProfile(userId))
     }
+};
+
+export const updateProfileData = (profileData: any) => async(dispatch: any, getState: any) => {
+    let res = await profileApi.updateProfileData(profileData);
+    let userId = getState().authPage.id;
+    dispatch(getUserProfile(userId))
 }

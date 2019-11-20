@@ -28,7 +28,7 @@
     border-radius: 6px;
     box-shadow: 0 0 6px 0 gainsboro;
     width: 70%;
-    height: 300px;
+    height: 400px;
 }
 
 .name {
@@ -39,18 +39,19 @@
     font-size: 30px;
 }
 
-.contacts {
-    margin-left: 30px;
+.items {
+    margin-left: 70px;
 }
 
-.items {
-    margin-left: 20px;
+.title {
+    margin-left: 30px;
+    font-weight: bold;
 }
 
 .looking {
     margin-left: 30px;
     margin-top: 10px;
-    font-size: 20px;
+    font-weight: bold;
 }
 
 .status {
@@ -74,4 +75,36 @@
 .avaForm {
     margin-top: 10px;
     margin-left: 40px;
+}
+
+
+.aboutMe {
+    margin-left: 30px;
+    font-weight: bold;
+}
+
+
+.edit {
+    margin-top: 30px;
+    margin-left: 210px;
+}
+
+.edit button {
+    padding: 3px 40px;
+    border: 1px solid black;
+    background: none;
+}
+
+.photoInput {
+    visibility: hidden;
+}
+
+avaForm {
+    margin-top: 5px;
+
+}
+
+.changePhoto {
+    border: 1px solid black;
+    padding: 3px 15px;
 }

@@ -1,6 +1,11 @@
 import React from 'react'
-import { Formik, Form } from 'formik';
-import { MyTextInput } from '../../common/FormControl';
+import {Formik, Form} from 'formik';
+import {MyTextInput, MyCheckbox} from '../../common/FormControl';
+import s from './ProfileInfo.module.css'
+import {useDispatch, useSelector} from "react-redux";
+import { updateProfileData } from '../../../redux/profile-reducer';
+import {AppStateType} from "../../../redux/store";
+import {IProfileData} from "../../../types/profile-types";
 
 const contacts = {
     vk: '',
@@ -12,32 +17,49 @@ const contacts = {
     mainLink: ''
 };
 
-const ProfileDataForm = () => {
+interface IProps {
+    setEditMode: () => void
+}
+
+const ProfileDataForm = ({setEditMode}: IProps) => {
+    const profile = useSelector((state: AppStateType): any => state.profilePage.profileData);
+    debugger
+    const dispatch = useDispatch();
+    const sendNewProfileData = (profileData: any) => {
+        setEditMode();
+        dispatch(updateProfileData(profileData))
+    };
+
     return (
         <>
             <Formik
                 initialValues={{
-                lookingForAJob: false,
-                lookingForAJobDescription: '',
-                fullName: '',
-                github: '',
-                vk: '',
-                facebook: '',
-                instagram: '',
-                twitter: '',
-                website: '',
-                youtube: '',
-                mainLink: ''
-            }}
-                onSubmit={(values) => console.log(values)}
+                    aboutMe: profile.aboutMe,
+                    lookingForAJob: false,
+                    lookingForAJobDescription: profile.lookingForAJobDescription,
+                    fullName: profile.fullName,
+                    github: profile.contacts.github,
+                    vk: profile.contacts.vk,
+                    facebook: profile.contacts.facebook,
+                    instagram: profile.contacts.instagram,
+                    twitter: profile.contacts.twitter,
+                    website: profile.contacts.website,
+                    youtube: profile.contacts.youtube,
+                    mainLink: ''
+                }}
+                onSubmit={(profileData) => sendNewProfileData(profileData)}
             >
-            <Form>
-                <MyTextInput type='text' name='fullName' label='fullName' />
-                <MyTextInput type='text' name='lookingForAJobDescription' label='lookingForAJobDescription'/>
-                {Object.keys(contacts).map(key => (
-                     <MyTextInput type='text' name={`contacts.${key}`} label={key}/>))}
-                     <button type='submit'>Send</button>
-            </Form>
+                <Form>
+                    <div className={s.formWrapper}>
+                        <MyTextInput type='text' name='fullName' label='fullName'/>
+                        <MyTextInput type='text' name='aboutMe' label='aboutMe'/>
+                        < MyCheckbox name='lookingForAJob'>lookingForAJob</MyCheckbox>
+                        <MyTextInput type='text' name='lookingForAJobDescription' label='lookingForAJobDescription'/>
+                        {Object.keys(contacts).map(key => (
+                            <MyTextInput type='text' name={`contacts.${key}`} label={key}/>))}
+                        <button type='submit'>Send</button>
+                    </div>
+                </Form>
             </Formik>
         </>
     )

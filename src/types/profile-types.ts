@@ -17,6 +17,7 @@ export interface IPhotos {
 }
 
 export interface IProfileData {
+    aboutMe: string
     userId: number
     lookingForAJob: boolean
     lookingForAJobDescription: string

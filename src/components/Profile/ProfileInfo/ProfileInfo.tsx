@@ -17,8 +17,8 @@ const ProfileInfo = ({profile, status}: IProps) => {
     return (
         <div className={s.info}>
             <Avatar photo={profile.photos.small}/>
-            {!editMode && <ProfileData onClickCb={() => setEditMode(true)} profile={profile} status={status}/>}
-            {editMode && <ProfileDataForm />}
+            {!editMode && <ProfileData setEditMode={() => setEditMode(true)} profile={profile} status={status}/>}
+            {editMode && <ProfileDataForm setEditMode={() => setEditMode(false)} />}
         </div>
     )
 };

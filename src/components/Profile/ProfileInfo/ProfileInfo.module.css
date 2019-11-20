@@ -2,3 +2,8 @@
     display: flex;
     width: 90%;
 }
+
+.formWrapper {
+    display: flex;
+    flex-direction: column;
+}
