@@ -54,3 +54,10 @@ export const profileApi = {
     }
 
 };
+
+
+export const usersApi = {
+    getUsers (count: number, page: number) {
+        return instance.get(`users?count=${count}&page=${page}`)
+    }
+};

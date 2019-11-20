@@ -18,7 +18,7 @@ const ProfileInfo = ({profile, status, userId, authorizedUserId}: IProps) => {
     const [editMode, setEditMode] = useState(false);
     return (
         <div className={s.info}>
-            <Avatar photo={profile.photos.large}/>
+            <Avatar userId={userId} authorizedUserId={authorizedUserId} photo={profile.photos.large}/>
             {!editMode && <ProfileData userId={userId} authorizedUserId={authorizedUserId} setEditMode={() => setEditMode(true)} profile={profile} status={status}/>}
             {editMode && <ProfileDataForm setEditMode={() => setEditMode(false)} />}
         </div>

@@ -86,4 +86,4 @@ export const updateProfileData = (profileData: any) => async(dispatch: any, getS
     let res = await profileApi.updateProfileData(profileData);
     let userId = getState().authPage.id;
     dispatch(getUserProfile(userId))
-}
+};

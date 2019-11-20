@@ -53,7 +53,7 @@ const ProfileDataForm = ({setEditMode}: IProps) => {
                     <div className={s.formWrapper}>
                         <MyTextInput type='text' name='fullName' label='fullName'/>
                         <MyTextInput type='text' name='aboutMe' label='aboutMe'/>
-                        < MyCheckbox name='lookingForAJob'>lookingForAJob</MyCheckbox>
+                        <MyCheckbox name='lookingForAJob'>lookingForAJob</MyCheckbox>
                         <MyTextInput type='text' name='lookingForAJobDescription' label='lookingForAJobDescription'/>
                         {Object.keys(contacts).map(key => (
                             <MyTextInput type='text' name={`contacts.${key}`} label={key}/>))}

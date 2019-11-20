@@ -3,7 +3,6 @@ import './App.css'
 import Header from './components/Header/Header';
 import Navigation from "./components/Navigation/Navigation";
 import {Route} from 'react-router-dom';
-import Users from './components/Users/Users';
 import Music from './components/Music/Music';
 import Setting from './components/Setting/Setting';
 import {useDispatch, useSelector} from "react-redux";
@@ -12,6 +11,7 @@ import {AppStateType} from './redux/store';
 import Preloader from './components/common/Preloader';
 import ProfileContainer from "./components/Profile/ProfileContainer";
 import Login from './components/Login/Login';
+import UsersContainer from './components/Users/UsersContainer';
 
 
 
@@ -33,7 +33,7 @@ const App = () => {
             <div className='wrapper'>
                 <Navigation/>
                 <Route exact path='/profile/:userId?' render={() => <ProfileContainer/>}/>
-                <Route path='/users' render={() => <Users/>}/>
+                <Route path='/users' render={() => <UsersContainer/>}/>
                 <Route path='/music' render={() => <Music/>}/>
                 <Route path='/setting' render={() => <Setting/>}/>
                 <Route path='/login' render={() => <Login/>}/>

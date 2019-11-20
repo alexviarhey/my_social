@@ -17,7 +17,7 @@ const ProfileData = ({profile, status, setEditMode, userId, authorizedUserId}: I
         <div className={s.description}>
             <div className={s.name}>{profile.fullName}</div>
             <ProfileStatus userId={userId} authorizedUserId={authorizedUserId} status={status} />
-            <div><span className={s.title}>Looking for a job:</span> {profile.lookingForAJobDescription ? 'Yes' : 'No'}</div>
+            <div><span className={s.title}>Looking for a job:</span> {profile.lookingForAJob ? 'Yes' : 'No'}</div>
             <div><span className={s.title}>About me:</span> {profile.aboutMe}</div>
             <div className={s.contacts}>
                 <span className={s.title}>Contacts:</span>

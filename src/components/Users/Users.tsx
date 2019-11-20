@@ -1,10 +1,21 @@
 import React from 'react'
+import s from './Users.module.css'
+import Pagination from "./Pagination";
+import {IUser} from "../../redux/users-reducer";
+import User from './User';
 
 
-const Users = () => {
+interface IProps {
+    users: Array<IUser>
+}
+
+const Users = ({users}: IProps) => {
     return (
-        <div>
-            Users
+        <div className={s.outer}>
+            <Pagination/>
+            <div className={s.users}>
+                {users.map(user => <User key={user.id} user={user}/>)}
+            </div>
         </div>
     )
 };
