@@ -1,15 +1,17 @@
 import React, {useEffect, useState} from 'react'
 import s from "../Profile.module.css";
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 import { updateStatus } from '../../../redux/profile-reducer';
-import {AppStateType} from "../../../redux/store";
+
 
 
 interface IProps {
     status: string
+    userId: number
+    authorizedUserId: number | null
 }
 
-const ProfileStatus = ({status}: IProps) => {
+const ProfileStatus = ({status, userId, authorizedUserId}: IProps) => {
     const [title, setTitle] = useState('');
     const [editMode, setEditMode] = useState(false);
     useEffect(() => {
@@ -17,7 +19,7 @@ const ProfileStatus = ({status}: IProps) => {
     }, [status]);
     let dispatch = useDispatch();
     const activateEM = () => {
-        setEditMode(true)
+        (userId === authorizedUserId) && setEditMode(true)
     };
     const deactivateEM = () => {
         setEditMode(false);

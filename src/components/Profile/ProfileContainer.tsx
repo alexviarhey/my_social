@@ -28,7 +28,7 @@ const ProfileContainer = (props: any) => {
     }, [userId]);
 
     return (
-        <Profile profile={profile} status={status}/>
+        <Profile profile={profile} status={status} userId={userId} authorizedUserId={authorizedUserId} />
     )
 };
 
