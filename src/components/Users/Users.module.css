@@ -69,3 +69,17 @@
     background-color: #afc0d7;
 
 }
+
+
+
+.page, .activePage  {
+    margin: 2px;
+}
+
+.page:hover, .activePage:hover {
+    cursor: pointer;
+}
+
+.activePage {
+    font-weight: bold;
+}

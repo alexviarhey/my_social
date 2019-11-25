@@ -1,8 +1,8 @@
 import React from 'react'
 import s from './Users.module.css'
 import ava from '../../img/ava.png'
-import { IUser } from '../../redux/users-reducer';
 import {NavLink} from "react-router-dom";
+import { IUser } from '../../types/users-types';
 
 
 interface IProps {

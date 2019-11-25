@@ -1,8 +1,9 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 import s from './Profile.module.css'
 import {IProfileData} from "../../types/profile-types";
 import Preloader from "../common/Preloader";
 import ProfileInfo from './ProfileInfo/ProfileInfo';
+
 
 
 
@@ -15,7 +16,7 @@ interface IProps {
 
 
 const Profile = ({profile, status, userId, authorizedUserId}: IProps) => {
-    if(!profile) return <Preloader/>
+    if(!profile) return <Preloader/>;
     return (
         <div className={s.outer}>
             <ProfileInfo userId={userId} authorizedUserId={authorizedUserId} profile={profile} status={status} />
@@ -30,3 +31,22 @@ const Profile = ({profile, status, userId, authorizedUserId}: IProps) => {
 
 
 export default Profile
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
