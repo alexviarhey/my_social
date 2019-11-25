@@ -30,7 +30,7 @@ export const MyCheckbox = ({ children, ...props }: IPropsCheckbox) => {
     // We need to tell useField what type of input this is
     // since React treats radios and checkboxes differently
     // than inputs/select/textarea.
-    const [field, meta]: any = useField({ ...props, type: 'checkbox' });
+    const [field]: any = useField({ ...props, type: 'checkbox' });
     return (
         <>
             <label className="checkbox">

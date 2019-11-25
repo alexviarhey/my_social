@@ -5,7 +5,6 @@ import s from './ProfileInfo.module.css'
 import {useDispatch, useSelector} from "react-redux";
 import { updateProfileData } from '../../../redux/profile-reducer';
 import {AppStateType} from "../../../redux/store";
-import {IProfileData} from "../../../types/profile-types";
 
 const contacts = {
     vk: '',

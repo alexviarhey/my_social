@@ -22,7 +22,7 @@ export const appReducer = (state=initialState, action: any) => {
             return {
                 ...state,
                 initialized: true
-            }
+            };
 
         default: return state
     }
@@ -33,7 +33,7 @@ const initializeSuccess = (): IInitializeSuccessAction => {
 };
 
 export const initialize = () => async(dispatch: any) => {
-    let res = await dispatch(getAuthUserData());
+    await dispatch(getAuthUserData());
     dispatch(initializeSuccess())
 };
 

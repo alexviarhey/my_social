@@ -4,8 +4,8 @@ import {
     ISetProfileDataAction,
     CommonActionsProfileType,
     ISetStatusAction,
-    ISetPhotoAction,
-    IPhotos
+    /*ISetPhotoAction,
+    IPhotos*/
 } from "../types/profile-types";
 import {profileApi} from "../api/api";
 
@@ -52,9 +52,9 @@ const setStatus = (status: string): ISetStatusAction => {
     return {type: SET_STATUS, status}
 };
 
-const setNewPhoto = (newPhoto: IPhotos): ISetPhotoAction => {
+/*const setNewPhoto = (newPhoto: IPhotos): ISetPhotoAction => {
     return {type: SET_NEW_PHOTO, newPhoto}
-};
+};*/
 
 
 export const getUserProfile = (userId: number) => async (dispatch: any) => {
@@ -75,7 +75,7 @@ export const updateStatus = (status: string) => async (dispatch: any) => {
 };
 
 export const changePhoto = (photoFile: any): Function => async (dispatch: any, getState: any) => {
-    let userId = getState().authPage.id
+    let userId = getState().authPage.id;
     let res = await profileApi.changePhoto(photoFile);
     if (res.data.resultCode === 0) {
         dispatch(getUserProfile(userId))
@@ -83,7 +83,7 @@ export const changePhoto = (photoFile: any): Function => async (dispatch: any, g
 };
 
 export const updateProfileData = (profileData: any) => async(dispatch: any, getState: any) => {
-    let res = await profileApi.updateProfileData(profileData);
+    await profileApi.updateProfileData(profileData);
     let userId = getState().authPage.id;
     dispatch(getUserProfile(userId))
 };

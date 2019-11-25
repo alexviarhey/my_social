@@ -1,4 +1,4 @@
-import React, {ChangeEvent, FormEvent, useState} from 'react'
+import React, {ChangeEvent} from 'react'
 import s from "../Profile.module.css";
 import ava from "../../../img/ava.png";
 import {useDispatch} from "react-redux";
@@ -22,7 +22,7 @@ const Avatar = ({photo, userId, authorizedUserId}: IProps) => {
     return (
         <div className={s.avaOuter}>
             <div className={s.avaWrap}>
-                <img className={s.ava} src={photo || ava}/>
+                <img className={s.ava} src={photo || ava} alt='avatar'/>
             </div>
             {userId === authorizedUserId &&
             <div className={s.avaForm}>

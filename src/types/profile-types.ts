@@ -29,7 +29,7 @@ export interface IProfileData {
 export interface IInitialProfile {
     profileData: IProfileData | null,
     status: string
-};
+}
 
 
 export interface ISetProfileDataAction {

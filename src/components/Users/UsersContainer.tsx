@@ -20,7 +20,7 @@ const UsersContainer = () => {
 
     useEffect(() => {
         dispatch(getUsers(count, currentPage))
-    }, []);
+    }, [count, currentPage, dispatch]);
 
     const onPageChanged = (p: number) => {
         dispatch(setCurrentPage(p));

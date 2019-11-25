@@ -9,10 +9,16 @@ import {Redirect} from 'react-router-dom';
 
 
 const Login = () => {
-    let errMessage = useSelector((state: AppStateType): string | null => state.authPage.errorLoginMessage);
-    let isAuth = useSelector((state: AppStateType): boolean => state.authPage.isAuth);
-    let captcha = useSelector((state: AppStateType): string | null => state.authPage.captchaUrl)
+    let {errMessage, isAuth, captcha} = useSelector((state: AppStateType) => {
+        return {
+            errMessage: state.authPage.errorLoginMessage,
+            isAuth: state.authPage.isAuth,
+            captcha: state.authPage.captchaUrl
+        }
+    });
+
     let dispatch = useDispatch();
+
     const formik = useFormik({
         initialValues: {
             email: '',
@@ -34,7 +40,7 @@ const Login = () => {
     return (
         <div className={s.outer}>
             <div className={s.title}>Login</div>
-            <form className={s.form}  onSubmit={formik.handleSubmit}>
+            <form className={s.form} onSubmit={formik.handleSubmit}>
                 <input className={s.input}
                        type="email"
                        placeholder='email@gmail.com'
@@ -58,7 +64,7 @@ const Login = () => {
                 {formik.touched.password && formik.errors.password ?
                     <div className={s.error}>{formik.errors.password}</div> : null
                 }
-                {captcha && <img className={s.captcha} src={captcha}/>}
+                {captcha && <img className={s.captcha} src={captcha} alt='captcha'/>}
                 {captcha && <input type="text"
                                    value={formik.values.captcha}
                                    onBlur={formik.handleBlur}

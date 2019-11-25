@@ -1,8 +1,5 @@
 import React, { useState } from 'react'
 import s from "./Users.module.css";
-import {useDispatch} from "react-redux";
-import {getUsers, setCurrentPage} from '../../redux/users-reducer';
-
 
 interface IProps {
     count: number
@@ -13,9 +10,6 @@ interface IProps {
 }
 
 const Pagination = ({count, currentPage, totalUserCount, portionSize=10, onPageChanged}: IProps) => {
-
-    const dispatch = useDispatch();
-
     //number of portion
     const [currentPortion, setCurrentPortion] = useState(1);
 
@@ -41,7 +35,7 @@ const Pagination = ({count, currentPage, totalUserCount, portionSize=10, onPageC
         <div className={s.pagination}>
             {(currentPortion !== 1) && <button onClick={() => setCurrentPortion(currentPortion - 1)}>prev</button>}
             {pageCountArr.filter(p => p >= leftPortionNumber && p <= rightPortionNumber).map(p => (
-                <div onClick={() => onPageChanged(p)} className={currentPage === p ? s.activePage : s.page}>{p}</div>)
+                <div key={p} onClick={() => onPageChanged(p)} className={currentPage === p ? s.activePage : s.page}>{p}</div>)
             )}
             {(currentPortion < portionCount) && <button onClick={() => setCurrentPortion(currentPortion + 1)}>next</button>}
         </div>

@@ -20,7 +20,7 @@ const App = () => {
     let initialized = useSelector((state: AppStateType) => state.appPage.initialized);
     useEffect(() => {
         dispatch(initialize())
-    }, []);
+    }, [dispatch]);
 
 
 

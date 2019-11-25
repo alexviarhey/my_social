@@ -25,7 +25,7 @@ const ProfileContainer = (props: any) => {
     useEffect(() => {
         dispatch(getUserProfile(userId));
         dispatch(getStatus(userId))
-    }, [userId]);
+    }, [userId, dispatch]);
 
     return (
         <Profile profile={profile} status={status} userId={userId} authorizedUserId={authorizedUserId} />
